@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Texto | Saturna de M</title>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4D44DB;
+            --dark: #2A2A3C;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F5F7FA;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .analysis-box {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid #E9ECEF;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .result-container {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: #F8F9FF;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Análise de Texto</h1>
+            <p>Descubra insights sobre qualquer texto com nossa IA avançada</p>
+        </header>
+        
+        <div class="analysis-box">
+            <h2>Digite seu texto</h2>
+            <textarea id="textInput" placeholder="Ex: CPA - Custos e Processos Administrativos"></textarea>
+            <button id="analyzeBtn">Analisar</button>
+            
+            <div class="result-container" id="resultContainer">
+                <h3>Resultados da Análise</h3>
+                <div id="analysisResults"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        © 2024 Saturna de M. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        document.getElementById('analyzeBtn').addEventListener('click', function() {
+            const text = document.getElementById('textInput').value.trim();
+            const resultContainer = document.getElementById('resultContainer');
+            const analysisResults = document.getElementById('analysisResults');
+            
+            if (!text) {
+                alert('Por favor, digite algum texto para análise');
+                return;
+            }
+            
+            // Simulação de análise (substituir por chamada real à API)
+            analysisResults.innerHTML = `
+                <p><strong>Texto analisado:</strong> "${text}"</p>
+                <p><strong>Sentimento:</strong> Neutro</p>
+                <p><strong>Tópicos identificados:</strong> Administração, Processos</p>
+                <p><strong>Palavras-chave:</strong> CPA, Custos, Processos, Administrativos</p>
+            `;
+            
+            resultContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
