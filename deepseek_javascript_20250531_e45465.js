@@ -97,4 +97,32 @@ document.addEventListener('DOMContentLoaded', function() {
         sentimentScore.textContent = results.sentimentScore.toFixed(2);
         
         // Atualizar sentimento
-        sentiment
+        sentimentResult.innerHTML = `${results.sentimentIcon} ${results.sentiment}`;
+        sentimentResult.className = `sentiment-${results.sentiment.toLowerCase()}`;
+        
+        // Atualizar palavras-chave
+        keywordsResult.innerHTML = '';
+        results.keywords.forEach(keyword => {
+            const tag = document.createElement('span');
+            tag.className = 'tag';
+            tag.textContent = keyword;
+            keywordsResult.appendChild(tag);
+        });
+        
+        // Atualizar tópicos
+        topicsResult.innerHTML = '';
+        results.topics.forEach(topic => {
+            const tag = document.createElement('span');
+            tag.className = 'tag';
+            tag.textContent = topic;
+            topicsResult.appendChild(tag);
+        });
+    }
+
+    // Análise em tempo real enquanto digita
+    textInput.addEventListener('input', function() {
+        const text = textInput.value;
+        wordCount.textContent = text.split(/\s+/).filter(word => word.length > 0).length;
+        charCount.textContent = text.length;
+    });
+});
