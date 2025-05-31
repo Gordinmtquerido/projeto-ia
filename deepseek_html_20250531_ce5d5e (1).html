@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Texto | Saturna de M</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-pie"></i> Análise de Texto</h1>
+            <p>Descubra insights sobre qualquer texto com nossa IA avançada</p>
+        </header>
+        
+        <div class="analysis-box">
+            <h2><i class="fas fa-edit"></i> Digite seu texto</h2>
+            <textarea id="textInput" placeholder="Ex: CPA - Custos e Processos Administrativos"></textarea>
+            <button id="analyzeBtn"><i class="fas fa-magic"></i> Analisar</button>
+            
+            <div class="result-container" id="resultContainer">
+                <h3><i class="fas fa-chart-bar"></i> Resultados da Análise</h3>
+                <div class="result-grid">
+                    <div class="result-card">
+                        <h4><i class="fas fa-comment-dots"></i> Sentimento</h4>
+                        <div id="sentimentResult" class="sentiment-neutral">
+                            <i class="fas fa-meh"></i> Neutro
+                        </div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4><i class="fas fa-key"></i> Palavras-chave</h4>
+                        <div id="keywordsResult" class="tags-container"></div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4><i class="fas fa-tags"></i> Tópicos</h4>
+                        <div id="topicsResult" class="tags-container"></div>
+                    </div>
+                    
+                    <div class="result-card full-width">
+                        <h4><i class="fas fa-chart-line"></i> Métricas</h4>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value" id="wordCount">0</span>
+                                <span class="metric-label">Palavras</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value" id="charCount">0</span>
+                                <span class="metric-label">Caracteres</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value" id="sentimentScore">0.5</span>
+                                <span class="metric-label">Pontuação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2024 Saturna de M. Todos os direitos reservados.</p>
+        <p class="version">Versão 2.0.0</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
